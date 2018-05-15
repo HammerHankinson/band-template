@@ -4,35 +4,43 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>The Raygunomics | Denver Based Dance Hits Cover Band</title>
+    <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel='stylesheet' href='css/main.css'>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Cool Band</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto text-right">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Upcoming Shows</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+    <header class="fixed-top">
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Facebook</a></li>
+                            <li><a href="#" class="text-white">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <strong>Some Dumb Band</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
     <main role="main">
 
         <div class="jumbotron">
@@ -42,37 +50,91 @@
                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
             </div>
         </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2 class="text-center">We're available for your special event</h2>
+        <section class="upcoming">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2>Upcoming Shows</h2>
+                        <br>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Venue</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Time</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td scope="row">6/20/2018</td>
+                                <td>Bar Louie</td>
+                                <td>1234 thatone street, Lakewood CO</td>
+                                <td>9pm - 1am</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">6/20/2018</td>
+                                <td>Bar Louie</td>
+                                <td>1234 thatone street, Lakewood CO</td>
+                                <td>9pm - 1am</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">6/20/2018</td>
+                                <td>Bar Louie</td>
+                                <td>1234 thatone street, Lakewood CO</td>
+                                <td>9pm - 1am</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-5"><iframe src="https://www.google.com/maps/d/embed?mid=12xpNIiV_YoRZHPAkUFcRtz_XbRUlCcms" width="440" height="300"></iframe></div>
                 </div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Weddings</h4>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="text-center">We're available for your special event</h2>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h4>Private Partiess</h4>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Weddings</h4>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Private Parties</h4>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Funerals</h4>
+                        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h4>Funerals</h4>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            </div> <!-- /container -->
+        </section>
+        <section class="songs bg-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>Some of our songs include</h2>
+
+                    </div>
                 </div>
             </div>
-
-            <hr>
-
-        </div> <!-- /container -->
+        </section>
 
     </main>
+    <hr>
+    <footer>
+        <div class="container">
+            <p class="float-right"><a href="https://www.facebook.com/LotusGaitDenver/" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a></p>
+            <p>&copy The Band 2018</p>
+        </div>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

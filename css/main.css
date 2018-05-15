@@ -3,6 +3,19 @@ body {
   padding-top: 3.5rem;
 }
 
+iframe {
+  width: 100%;
+}
+
 .bg-gradient-purple {
   background: rgb(2,0,36);
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(83,9,121,1) 50%, rgba(153,98,205,1) 100%);}
+
+.bg-gray {
+  background-color: #e9ecef;
+}
+
+main .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
