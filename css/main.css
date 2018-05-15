@@ -1,0 +1,8 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+}
+
+.bg-gradient-purple {
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(83,9,121,1) 50%, rgba(153,98,205,1) 100%);}
