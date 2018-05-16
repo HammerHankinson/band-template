@@ -3,7 +3,7 @@ body {
   padding-top: 3.5rem;
 }
 
-iframe {
+.event-map iframe {
   width: 100%;
 }
 
@@ -19,3 +19,5 @@ main .container {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+
+.songTable {margin-top: 65px;}
