@@ -27,7 +27,7 @@ const airtableBase = (config) => {
                 const backend_id = record['_rawJson']['id'];
                 const updatedRecord = Object.assign({}, record['_rawJson']['fields'], {
                   'backend_id': backend_id,
-                })
+                });
                 records.push(updatedRecord)
               });
 
@@ -38,7 +38,7 @@ const airtableBase = (config) => {
 
             }, function done(err) {
               if (err) { reject(err); return; }
-              // console.log('records=', records)
+              //console.log('records=', records)
               resolve(records)
             });
       });
@@ -50,29 +50,6 @@ const airtableBase = (config) => {
 };
 
 const getSongList = (config) => {
-  const _list = {};
-  const _uuid4 = () => {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      const r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-  }
-  // @TODO: validate!
-  const _validateItem = item => {return true;}
-  // @TODO: validate!
-  const _validatePrice = price => {return Math.random() < 0.5 ? true : true;}
-
-  const _itemExists = id => {
-    if (typeof id !== "string") {
-      return false;
-    }
-
-    if (typeof _list[id] === "undefined") {
-      return false;
-    }
-
-    return true;
-  };
 
   const a = airtableBase({
     apiKey: 'keyBmOGOvQq5eykdy',
@@ -80,37 +57,76 @@ const getSongList = (config) => {
     tableName: 'Songs'
   });
 
+  const b = airtableBase({
+    apiKey: 'keyBmOGOvQq5eykdy',
+    baseId: 'appTU8qIB4tqUk280',
+    tableName: 'Show List'
+  });
+
   return {
-    create: (song, artist) => {
-      return new Promise((resolve, reject) => {
-        const id = _uuid4();
-        if (!_validatePrice(price) || !_validateItem(item)) {
-          reject("Price or Item is not valid!");
-          return;
-        }
-
-        _list[id] = {
-          'song': song,
-          'artist': artist,
-        }
-        resolve(id)
-      })
-    },
-    list: () => {
+    songs: () => {
       return a.list();
-
-      // if (config.type === "airtable") {
-      // 	return a.list();
-      // }
-      // else {
-      // 	// ... do something to return the in-memory version
-      // }
-
     },
+    shows: () => {
+      return b.list()
+    }
   };
+};
+
+const shuffle = (a) => {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 };
 
 
 const sl = getSongList();
+const songs = sl.songs();
+const shows = sl.shows();
 
-console.log(sl.list());
+Promise.all([shows])
+    .then(showList => {
+      const showKey = showList[0];
+      const showTable = document.querySelector('.showTableBody');
+      let showRender = '';
+      for (let i = 0; i < showKey.length; i++) {
+        showRender += `<tr>
+                    <td scope="row">${showKey[i].Date}</td>
+                    <td>${showKey[i].Venue}</td>
+                    <td>${showKey[i].VenueAddress}</td>
+                    <td>${showKey[i].Time}</td>
+                </tr>`;
+        showTable.innerHTML = showRender;
+      }
+    })
+    .catch(err => {
+      console.log('REASON: ', err)
+    });
+
+Promise.all([songs])
+    .then(songList => {
+      const shuffleList = () => {
+        const shuffledList = shuffle(songList[0]);
+        const result = shuffledList.slice(0, 8);
+        const songTable = document.querySelector('.songTableBody');
+        let resultList = '';
+        for(let i = 0; i < result.length; i++) {
+
+          resultList += `<tr>
+                            <td scope="row">${result[i].Song}</td>
+                            <td>${result[i].Artist}</td>
+                        </tr>`;
+          songTable.innerHTML = resultList;
+        }
+      };
+      shuffleList();
+      const randomBtn = document.querySelector('.randomize');
+      randomBtn.addEventListener('click', event => {
+        shuffleList();
+      })
+    })
+    .catch(err => {
+      console.log('REASON: ', err)
+    });
